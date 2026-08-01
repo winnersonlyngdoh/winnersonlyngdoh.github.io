@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>For Pookie ❤️</title>
+    <title>For My Ever Pookie ❤️</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -20,8 +20,12 @@
   <body>
     <canvas id="canvas"></canvas>
 
-    <div id="landing">
-      <h1>Hi Pookie ❤️</h1>
+    <!-- ========================= -->
+    <!-- Landing Screen -->
+    <!-- ========================= -->
+
+    <section id="landing" class="screen">
+      <h1>For My Ever Pookie ❤️</h1>
 
       <p>Press the button below.</p>
 
@@ -38,9 +42,13 @@
 
         <div id="message"></div>
       </div>
-    </div>
+    </section>
 
-    <div id="questionScreen">
+    <!-- ========================= -->
+    <!-- Love Question -->
+    <!-- ========================= -->
+
+    <section id="questionScreen" class="screen">
       <h1>Do You Love Me?</h1>
 
       <div id="buttonArea">
@@ -48,7 +56,35 @@
 
         <button id="noBtn">No 😶</button>
       </div>
-    </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Fortune Screen -->
+    <!-- ========================= -->
+
+    <section id="fortuneScreen" class="screen">
+      <h1>✨ Daily Fortune ✨</h1>
+
+      <button id="fortuneBtn">Reveal Today's Fortune</button>
+
+      <div id="fortuneCard">
+        <p id="fortuneText"></p>
+      </div>
+    </section>
+
+    <section id="scratchScreen" class="screen">
+      <h1>Scratch Card ❤️</h1>
+
+      <p>Scratch to reveal today's surprise.</p>
+
+      <div class="scratchContainer">
+        <div id="hiddenMessage">
+          I LOVE YOU SO MUCH POOKIE ❤️ Stay Tuned for our 3 year Anniversary
+        </div>
+
+        <canvas id="scratchCanvas"></canvas>
+      </div>
+    </section>
 
     <script src="script.js"></script>
   </body>

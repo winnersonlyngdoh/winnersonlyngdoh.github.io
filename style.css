@@ -4,12 +4,13 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-
-  background: linear-gradient(135deg, #fff7fa, #ffdce8);
-
   font-family: "Cormorant Garamond", serif;
+  background: linear-gradient(135deg, #fff8fb, #ffdce8);
 }
 
 canvas {
@@ -18,90 +19,114 @@ canvas {
   z-index: 0;
 }
 
-#landing {
-  position: absolute;
+/* ==========================
+   Shared Screen Layout
+========================== */
 
+.screen {
+  position: absolute;
   inset: 0;
 
-  display: flex;
+  display: none;
 
   justify-content: center;
-
   align-items: center;
-
   flex-direction: column;
 
   z-index: 10;
 }
 
-#landing h1 {
+#landing {
+  display: flex;
+}
+
+h1 {
   font-family: "Playfair Display", serif;
-
   color: #c2185b;
-
-  font-size: 3.5rem;
-
-  margin-bottom: 15px;
+  font-size: 3.6rem;
+  text-align: center;
 }
 
-#landing p {
-  color: #7d3d58;
+h2 {
+  font-family: "Playfair Display", serif;
+  color: #c2185b;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-  margin-bottom: 35px;
-
+p {
+  color: #7a4058;
   font-size: 1.2rem;
+  margin-top: 15px;
 }
+
+/* ==========================
+   Buttons
+========================== */
 
 button {
   border: none;
+  border-radius: 999px;
 
   cursor: pointer;
 
-  border-radius: 999px;
-
   padding: 18px 42px;
-
-  color: white;
 
   font-size: 1.1rem;
 
-  transition: 0.25s;
+  color: white;
+
+  transition:
+    transform 0.25s,
+    left 0.25s,
+    top 0.25s,
+    opacity 0.25s;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-#startBtn {
-  background: #ff4f87;
+#startBtn,
+#yesBtn,
+#fortuneBtn {
+  background: linear-gradient(135deg, #ff6c9b, #ff4d88);
 
-  box-shadow: 0 15px 40px rgba(255, 70, 120, 0.3);
+  box-shadow: 0 12px 30px rgba(255, 75, 125, 0.25);
+}
+
+#noBtn {
+  background: #707070;
+}
+
+/* ==========================
+   Landing
+========================== */
+
+#landing p {
+  margin-bottom: 35px;
 }
 
 #loader {
   display: none;
 
-  margin-top: 50px;
+  width: min(520px, 90vw);
 
-  width: min(500px, 90vw);
-}
-
-#loader h2 {
-  text-align: center;
-
-  margin-bottom: 20px;
-
-  color: #c2185b;
+  margin-top: 45px;
 }
 
 .bar {
+  width: 100%;
+
   height: 18px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
 
   background: white;
 
-  border-radius: 30px;
-
-  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .fill {
@@ -109,7 +134,7 @@ button:hover {
 
   height: 100%;
 
-  background: linear-gradient(90deg, #ff80ab, #ff4081);
+  background: linear-gradient(90deg, #ff89b2, #ff3d79);
 }
 
 #percent {
@@ -121,40 +146,22 @@ button:hover {
 }
 
 #message {
-  margin-top: 10px;
+  margin-top: 12px;
 
   text-align: center;
+
+  font-size: 1.2rem;
 
   color: #c2185b;
 
   font-weight: bold;
 }
 
-#questionScreen {
-  position: absolute;
-
-  inset: 0;
-
-  display: none;
-
-  justify-content: center;
-
-  align-items: center;
-
-  flex-direction: column;
-
-  background: linear-gradient(135deg, #fff7fa, #ffdce8);
-
-  z-index: 20;
-}
+/* ==========================
+   Love Question
+========================== */
 
 #questionScreen h1 {
-  font-family: "Playfair Display", serif;
-
-  color: #c2185b;
-
-  font-size: 3.5rem;
-
   margin-bottom: 70px;
 }
 
@@ -172,8 +179,6 @@ button:hover {
   left: 120px;
 
   top: 120px;
-
-  background: #ff4f87;
 }
 
 #noBtn {
@@ -182,6 +187,149 @@ button:hover {
   left: 380px;
 
   top: 120px;
+}
 
-  background: #666;
+/* ==========================
+   Fortune Screen
+========================== */
+
+#fortuneScreen h1 {
+  margin-bottom: 45px;
+}
+
+#fortuneCard {
+  width: min(560px, 90vw);
+
+  min-height: 170px;
+
+  margin-top: 40px;
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 35px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition: 0.45s;
+}
+
+#fortuneCard.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+#fortuneText {
+  font-size: 1.55rem;
+
+  color: #b03060;
+
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+
+    padding: 0 20px;
+  }
+
+  #buttonArea {
+    width: 90vw;
+
+    height: 280px;
+  }
+
+  #yesBtn {
+    left: 10%;
+  }
+
+  #noBtn {
+    left: 60%;
+  }
+
+  button {
+    padding: 16px 30px;
+
+    font-size: 1rem;
+  }
+}
+/* ==========================
+   Scratch Card
+========================== */
+
+#scratchScreen {
+  background: linear-gradient(135deg, #fff7fa, #ffdce8);
+}
+
+#scratchScreen h1 {
+  margin-bottom: 20px;
+}
+
+#scratchScreen p {
+  margin-bottom: 35px;
+}
+
+.scratchContainer {
+  position: relative;
+
+  width: 420px;
+
+  height: 170px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+#hiddenMessage {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background: white;
+
+  color: #c2185b;
+
+  font-size: 2rem;
+
+  font-weight: bold;
+
+  font-family: "Playfair Display", serif;
+}
+
+#scratchCanvas {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
 }
