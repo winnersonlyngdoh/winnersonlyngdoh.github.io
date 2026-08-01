@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #fff7fa, #ffdce8);
+
+  font-family: "Cormorant Garamond", serif;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+#landing {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  z-index: 10;
+}
+
+#landing h1 {
+  font-family: "Playfair Display", serif;
+
+  color: #c2185b;
+
+  font-size: 3.5rem;
+
+  margin-bottom: 15px;
+}
+
+#landing p {
+  color: #7d3d58;
+
+  margin-bottom: 35px;
+
+  font-size: 1.2rem;
+}
+
+button {
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 999px;
+
+  padding: 18px 42px;
+
+  color: white;
+
+  font-size: 1.1rem;
+
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#startBtn {
+  background: #ff4f87;
+
+  box-shadow: 0 15px 40px rgba(255, 70, 120, 0.3);
+}
+
+#loader {
+  display: none;
+
+  margin-top: 50px;
+
+  width: min(500px, 90vw);
+}
+
+#loader h2 {
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  color: #c2185b;
+}
+
+.bar {
+  height: 18px;
+
+  background: white;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+}
+
+.fill {
+  width: 0%;
+
+  height: 100%;
+
+  background: linear-gradient(90deg, #ff80ab, #ff4081);
+}
+
+#percent {
+  margin-top: 18px;
+
+  text-align: center;
+
+  font-size: 1.3rem;
+}
+
+#message {
+  margin-top: 10px;
+
+  text-align: center;
+
+  color: #c2185b;
+
+  font-weight: bold;
+}
+
+#questionScreen {
+  position: absolute;
+
+  inset: 0;
+
+  display: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  background: linear-gradient(135deg, #fff7fa, #ffdce8);
+
+  z-index: 20;
+}
+
+#questionScreen h1 {
+  font-family: "Playfair Display", serif;
+
+  color: #c2185b;
+
+  font-size: 3.5rem;
+
+  margin-bottom: 70px;
+}
+
+#buttonArea {
+  position: relative;
+
+  width: 650px;
+
+  height: 320px;
+}
+
+#yesBtn {
+  position: absolute;
+
+  left: 120px;
+
+  top: 120px;
+
+  background: #ff4f87;
+}
+
+#noBtn {
+  position: absolute;
+
+  left: 380px;
+
+  top: 120px;
+
+  background: #666;
+}
